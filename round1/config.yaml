@@ -1,0 +1,24 @@
+# config.yaml
+training:
+  # 基本训练参数
+  learning_rate: 0.00002
+  weight_decay: 0.01
+  batch_size: 32
+  gradient_clip: 1.0
+  num_epochs: 10
+  gradient_accumulation_steps: 1
+  # 早停和保存
+  patience: 5
+  min_epochs: 10
+  save_every: 3
+  
+  projection_dim : 256
+  freeze_base_model : false
+  dropout: 0.1
+  max_seq_length: 40
+  online_mining: true
+  val_ratio: 0.1
+  # 输出和日志
+  output_dir: ""
+  logging_steps: 50
+  use_wandb: false
