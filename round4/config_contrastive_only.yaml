@@ -1,0 +1,39 @@
+# config.yaml
+training:
+  # 基本训练参数
+  learning_rate: 0.00002
+  weight_decay: 0.01
+  batch_size: 8
+  gradient_clip: 1.0
+  epochs: 10
+  contrastive_weight: 1
+  # 早停和保存
+  patience: 5
+  min_epochs: 10
+  save_every: 1
+  
+  # 对比学习参数
+  initial_margin: 0.4
+  hard_weight: 5.0
+  margin_update_factor: 0.05
+  projection_dim : 256
+  freeze_base_model : false
+  dropout: 0.2
+  # 数据集参数
+  contrastive_data_path : "/home/wangaw/ESM/semi_supervised/train_test_data/round_4/preprocess/combined_pairs.txt"
+  mic_data_path : "/home/wangaw/ESM/semi_supervised/train_test_data/round_4/preprocess/expand_with_negative.csv"
+  structure_data_path : "/data/wangaw/ESM/Structure_npy"
+  max_seq_length: 40
+  online_mining: true
+  mining_ratio: 0.3
+  use_curriculum: true
+  initial_easy_ratio: 0.7
+  val_ratio: 0.1
+  num_pair: null
+  num_mic : null
+  # 输出和日志
+  output_dir: "/data/wangaw/ESM/experiment_v7/models_contrastive_only_fuse_one_stage"
+  logging_steps: 50
+  project_name: "peptide-contrastive-learning"
+  use_wandb: false
+  wandb_run_name: "contrastive_only_two_stage"
